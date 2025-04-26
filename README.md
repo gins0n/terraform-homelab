@@ -37,7 +37,6 @@ In the `variables.tf` file, you can configure the variables for your deployment,
 - **Zones**: Set the zones where the VMs should be created (e.g., `us-east1-b`).
 - **Machine Types**: Choose the desired machine type for each VM (e.g., `e2-micro`, `e2-medium`).
   
-Example of what the variables might look like:
 
 ```hcl
 variable "instances" {
