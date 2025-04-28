@@ -1,0 +1,11 @@
+# Ignore Terraform variable files
+terraform.tfvars
+
+# Ignore SSH keys
+*.pub
+*.pem
+~/.ssh/*
+
+# Ignore any local environment files
+.env
+
