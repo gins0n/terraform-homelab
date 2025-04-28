@@ -20,3 +20,7 @@ variable "image" {
   default     = "projects/rhel-cloud/global/images/family/rhel-8"
 }
 
+variable "ssh_public_key" {
+  description = "public SSH key for accessing VMs"
+  type = string
+}
