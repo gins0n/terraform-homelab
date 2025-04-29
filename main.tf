@@ -27,3 +27,7 @@ resource "google_compute_instance" "vm_instance" {
 
 }
 
+output "ansible_master_ip" {
+  value = google_compute_instance.vm_instance["ansible-master"].network_interface[0].access_config[0].nat_ip
+}
+
