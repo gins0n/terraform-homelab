@@ -1,3 +1,8 @@
+variable "GOOGLE_APPLICATION_CREDENTIALS" {
+  description = "Path to GCP credentials JSON file"
+  type = string
+}
+
 variable "instances" {
   description = "A map of isntance names to their zone and image"
   type        = map(object({

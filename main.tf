@@ -1,7 +1,7 @@
 provider "google" {
-  credentials = file("~/.gcp/bold-syntax-458016-q6-0d4abc3629af.json")
+  credentials = file(var.GOOGLE_APPLICATION_CREDENTIALS)
   project     = "bold-syntax-458016-q6"
-  region      = "us-central1"
+  region      = "us-east1"
 }
 
 resource "google_compute_instance" "vm_instance" {
