@@ -1,0 +1,22 @@
+ssh_public_key = "~/.ssh/your_key"
+username = "username"
+
+instances = {
+  ansible-master = {
+    zone  = "zone"
+    image = "rhel-cloud/rhel-9"
+  },
+  control-plane = {
+    zone  = "zone"
+    image = "debian-cloud/debian-12"
+  },
+  worker-node-1 = {
+    zone  = "zone"
+    image = "debian-cloud/debian-12"
+  },
+  worker-node-2 = {
+    zone  = "zone"
+    image = "debian-cloud/debian-12"
+  }
+}
+
