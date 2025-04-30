@@ -3,8 +3,9 @@ variable "instances" {
   type        = map(string)
   default = {
     "ansible-master" = "us-east1-b"
-    "ansible-node1"  = "us-east1-b"
-    "ansible-node2"  = "us-east1-b"
+    "node01"  = "us-east1-b"
+    "node02"  = "us-east1-b"
+    "controlplane" = "us-east1-b"
   }
 }
 
@@ -22,5 +23,10 @@ variable "image" {
 
 variable "ssh_public_key" {
   description = "public SSH key for accessing VMs"
+  type = string
+}
+
+variable "username" {
+  description = "The username for SSH access"
   type = string
 }
