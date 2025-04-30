@@ -1,24 +1,33 @@
 variable "instances" {
-  description = "A map of instance names to zones"
-  type        = map(string)
-  default = {
-    "ansible-master" = "us-east1-b"
-    "node01"  = "us-east1-b"
-    "node02"  = "us-east1-b"
-    "controlplane" = "us-east1-b"
+  description = "A map of isntance names to their zone and image"
+  type        = map(object({
+    zone = string
+    image = string
+  }))
+default = {
+  "ansible-master" = {
+    zone = "us-east1-b"
+    image = "rhel-cloud/rhel-9"
+  },
+  "controlplane" = {
+    zone  = "us-east1-b"
+    image = "debian-cloud/debian-12"
+  },
+  "worker-node-1" = {
+    zone  = "us-east1-b"
+    image = "debian-cloud/debian-12"
+  },
+  "worker-node-2" = {
+    zone  = "us-east1-b"
+    image = "debian-cloud/debian-12"
   }
+ }
 }
 
 variable "machine_type" {
   description = "Machine type for all instances"
   type        = string
   default     = "e2-micro"
-}
-
-variable "image" {
-  description = "The image to use for the VM instances"
-  type        = string
-  default     = "projects/rhel-cloud/global/images/family/rhel-8"
 }
 
 variable "ssh_public_key" {

@@ -8,11 +8,11 @@ resource "google_compute_instance" "vm_instance" {
   for_each     = var.instances
   name         = each.key
   machine_type = var.machine_type
-  zone         = each.value
+  zone         = each.value.zone
 
   boot_disk {
     initialize_params {
-      image = var.image
+      image = each.value.image
     }
   }
 
