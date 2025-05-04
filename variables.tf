@@ -9,8 +9,11 @@ variable "instances" {
     zone = string
     image = string
   }))
-
 default = {
+  "ansible-master" = {
+    zone = "us-east1-b"
+    image = "rhel-cloud/rhel-9"
+  },
   "controlplane" = {
     zone  = "us-east1-b"
     image = "debian-cloud/debian-12"
