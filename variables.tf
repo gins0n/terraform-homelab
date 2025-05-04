@@ -4,16 +4,12 @@ variable "GOOGLE_APPLICATION_CREDENTIALS" {
 }
 
 variable "instances" {
-  description = "A map of isntance names to their zone and image"
+  description = "A map of instance names to their zone and image"
   type        = map(object({
     zone = string
     image = string
   }))
 default = {
-  "ansible-master" = {
-    zone = "us-east1-b"
-    image = "rhel-cloud/rhel-9"
-  },
   "controlplane" = {
     zone  = "us-east1-b"
     image = "debian-cloud/debian-12"
@@ -32,11 +28,16 @@ default = {
 variable "machine_type" {
   description = "Machine type for all instances"
   type        = string
-  default     = "e2-micro"
+  default     = "e2-small"
 }
 
 variable "ssh_public_key" {
   description = "public SSH key for accessing VMs"
+  type = string
+}
+
+variable "ssh_private_key" {
+  description = "The private SSH key used for authentication"
   type = string
 }
 
