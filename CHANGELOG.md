@@ -22,3 +22,14 @@
 ### Fixed
 - Resolved SSH key injection issue to correctly copy keys into VM's authorized_keys file
 
+## [1.1.0] - 2025-05-04
+### Added
+- Specific configurations for ansible-master node
+- Separate resource definition for the ansible-master node
+
+### Lessons Learned
+- **remote_exec**: Useful tool for one-off configurations or for things that have to be configured before we can start with Ansible. Sometimes people just use straight Terraform but no Ansible, which seems difficult to manage. Since we're going to have to ssh into ansible-master anyway this might have been in vain but I'll roll with it for now
+- **naming** Terraform only accepts underscores in resource names, be aware when referencing throughout main
+
+### Fixed
+- ansible-master now is provisioned correctly with ansible preinstalled. 
